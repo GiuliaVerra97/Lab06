@@ -57,7 +57,7 @@ public class MeteoController {
 	public void setModel(Model model) {
 		this.model=model;
 		for(int i=1; i<13;i++) {
-			boxMese.getItems().add(Month.of(i));
+			boxMese.getItems().add(Month.of(i));		//implementazione tendina
 		}
 		
 	}

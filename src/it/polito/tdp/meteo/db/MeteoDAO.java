@@ -110,7 +110,7 @@ public class MeteoDAO {
 	 * Metodo che ricava la media dell'umidità di ciascuna località in un mese specifico
 	 * @param mese
 	 * @param localita
-	 * @return valore umidità 
+	 * @return valore medio umidità 
 	 */
 	
 	

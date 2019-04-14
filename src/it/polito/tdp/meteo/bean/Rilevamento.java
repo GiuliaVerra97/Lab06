@@ -9,7 +9,7 @@ import it.polito.tdp.meteo.db.MeteoDAO;
 public class Rilevamento {
 
 	private String localita;
-	private Date data;
+	private Date data;		//non stringa
 	private int umidita;
 	
 

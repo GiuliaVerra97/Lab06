@@ -30,7 +30,7 @@ public class Model {
 	 * Metodo che mi permette di ricavare sotto forma di stringa l'umidità di ciascuna località presente nel DB, 
 	 * in un mese scelto dall'utente
 	 * @param mese della classe {@link Month}
-	 * @return stringa che registra l'umidità media di ciascuna località
+	 * @return stringa che registra l'umidità media di ciascuna località scelta
 	 */
 	
 	
