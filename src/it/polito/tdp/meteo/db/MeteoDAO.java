@@ -4,14 +4,12 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.text.DateFormat;
 import java.time.Month;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Locale;
 
+import it.polito.tdp.meteo.bean.Citta;
 import it.polito.tdp.meteo.bean.Rilevamento;
 
 public class MeteoDAO {
@@ -37,6 +35,7 @@ public class MeteoDAO {
 
 				Rilevamento r = new Rilevamento(rs.getString("Localita"), rs.getDate("Data"), rs.getInt("Umidita"));
 				rilevamenti.add(r);
+
 			}
 
 			conn.close();
@@ -129,5 +128,42 @@ public class MeteoDAO {
 		
 		return media;
 	}
+	
+	
+	
+	
+	
+	/**
+	 * Metodo che mi fornisce una lista delle città presenti nel DB, tutte diverse tra di loro, non voglio che si ripetano
+	 * @return lista {@link Citta}
+	 */
+	public List<Citta> getAllcitta(){
+		List<Citta> cittaLista = new LinkedList<Citta>();
+		final String sql = "SELECT DISTINCT localita FROM situazione GROUP BY localita ASC"; 
+		try {
+			Connection conn = DBConnect.getInstance().getConnection();
+			PreparedStatement st = conn.prepareStatement(sql);
+			
+			
+			ResultSet rs = st.executeQuery();
+			
+			while (rs.next()) {
+			Citta c = new Citta(rs.getString("localita"));
+			cittaLista.add(c);
+				
+			}
+			conn.close();
+			return cittaLista; 
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+			throw new RuntimeException(e);
+		}
+	}
+
+	
+	
+	
+	
 
 }

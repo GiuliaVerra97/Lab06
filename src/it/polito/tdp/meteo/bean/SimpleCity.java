@@ -2,8 +2,8 @@ package it.polito.tdp.meteo.bean;
 
 public class SimpleCity {
 
-	private String nome;
-	private int costo;
+	private String nome;	//nome della città
+	private int costo;		//costo di una giornata di rilevamenti, costo pari all'umidità di quel giorno
 	
 	public SimpleCity(String nome) {
 		this.nome = nome;

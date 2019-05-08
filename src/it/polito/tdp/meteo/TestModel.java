@@ -1,16 +1,18 @@
 package it.polito.tdp.meteo;
 
+import java.time.Month;
+
 public class TestModel {
 
 	public static void main(String[] args) {
 
 		Model m = new Model();
 		
-		//System.out.println(m.getUmiditaMedia(12));
+		System.out.println(m.getUmiditaMedia(Month.DECEMBER));
 		
-		//System.out.println(m.trovaSequenza(5));
+		System.out.println(m.calcolaSequenza(Month.JANUARY));
 		
-//		System.out.println(m.trovaSequenza(4));
+		System.out.println(m.calcolaSequenza(Month.APRIL));
 	}
 
 }

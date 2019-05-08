@@ -1,5 +1,6 @@
 package it.polito.tdp.meteo.bean;
 
+import java.time.Month;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -56,7 +57,9 @@ public class Rilevamento {
 	}
 	
 	
-
+	public int getMonth() {
+		return data.getMonth();
+	}
 	
 	
 
